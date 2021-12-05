@@ -1,21 +1,20 @@
 const express = require('express');
 
 const {
-//	createPost,
 	createCompany,
+	getCompany,
 	getAllCompanies,
-//	updatePost
+	updateCompanies,
+	patchCompanies,
+	deleteCompany
 } = require('../controllers/companyController');
 const router = express.Router();
 
-//router.post('/', createPost);
-//router.get('/', getCompany);
+router.get('/:id', getCompany);
 router.get('/', getAllCompanies);
 router.post('/', createCompany);
-// router.get('/', (req, res) => {
-// 	res.send('başarılı');
-// });
-//router.get('/', getAllPosts);
-//router.put('/:_id', updatePost);
+router.put('/:id', updateCompanies);
+router.patch('/:id', patchCompanies);
+router.delete('/:id', deleteCompany);
 
 module.exports = router;
